@@ -13,7 +13,7 @@ describe("Hero Component", () => {
     });
 
     test('renders signup button', () => {
-        render(<Hero />);
+        render(<Hero/>);
         const signupButton = screen.getByAltText("button", {name: "/signup_now/i"});
         expect(signupButton).toBeInTheDocument();
         expect(signupButton).toHaveAttribute("btn-primary")
