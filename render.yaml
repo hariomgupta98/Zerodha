@@ -1,1 +1,22 @@
-render.yaml
+
+services:
+  - type: web
+    name: zerodha-backend
+    env: node
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+
+  - type: web
+    name: zerodha-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+
+  - type: web
+    name: zerodha-dashboard
+    env: static
+    rootDir: dashboard
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
